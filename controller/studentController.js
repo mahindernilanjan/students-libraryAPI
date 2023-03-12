@@ -9,7 +9,7 @@ exports.registerstudent = async(req,res)=>{
     try{
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
         console.log(hashedPassword);
-        const newStuent = await new Student({
+        const newStuent = new Student({
             name:req.body.name,
             rollNo:req.body.rollNo,
             email:req.body.email,
